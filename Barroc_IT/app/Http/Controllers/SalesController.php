@@ -6,5 +6,13 @@ use Illuminate\Http\Request;
 
 class SalesController extends Controller
 {
-    
+
+    public function ShowSales(){
+
+
+        return view('sales',[
+
+        ]);
+    }
+
 }
