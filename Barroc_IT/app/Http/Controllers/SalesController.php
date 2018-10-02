@@ -11,7 +11,7 @@ class SalesController extends Controller
 
 
         return view('sales',[
-
+            
         ]);
     }
 
