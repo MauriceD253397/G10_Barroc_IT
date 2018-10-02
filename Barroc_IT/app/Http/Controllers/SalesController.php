@@ -10,7 +10,7 @@ class SalesController extends Controller
     public function ShowSales(){
 
 
-        return view('sales',[
+        return view('sales/sales',[
             
         ]);
     }
