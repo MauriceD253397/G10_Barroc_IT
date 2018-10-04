@@ -15,11 +15,19 @@ class CreateSalesTable extends Migration
     {
         Schema::create('tbl_companies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
+            $table->string('streetname1');
+            $table->string('housenumber1');
+            $table->string('houseletter1');
+            $table->string('street1');
+            $table->string('city1');
+            $table->string('streetname2');
+            $table->string('housenumber2');
+            $table->string('houseletter2');
+            $table->string('street2');
+            $table->string('city2');
+            $table->integer('faxnumber');
+            $table->boolean('creditworthy');
+
             $table->timestamps();
         });
     }
