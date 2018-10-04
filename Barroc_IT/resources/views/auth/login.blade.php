@@ -9,66 +9,42 @@
 
 
         <section class="row">
-            <aside class="col s8 push-s4 blue">
+            <aside class="col s8 push-s4 content-field">
 
-                <form method="POST" action="{{ route('login') }}">
-                    @if(session()->has('login_error'))
-                        <div class="alert alert-success">
-                            {{ session()->get('login_error') }}
-                        </div>
-                    @endif
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    {!! csrf_field() !!}
 
-                        <div class="input-field col s6">
-                            
-
-                            <label for="identity" class="col-md-4 control-label">First Name</label>
-
-                            <input id="identity" type="text" class="validate" name="identity">
-
-                            <!-- IDENTITY kan hieronder ook op type vatten ipv ID -->
-                            @if ($errors->has('identity'))
-                                <span class="help-block">
-                                            <strong>{{ $errors->first('identity') }}</strong>
-                                        </span>
-                            @endif
-
-
-                        </div>
-
-
-                    <div class="form-group{{ $errors->has('identity') ? ' has-error' : '' }}">
-                        <label for="identity" class="col-md-4 control-label">Username</label>
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label class="col-md-4 control-label">E-Mail Address</label>
 
                         <div class="col-md-6">
-                            <input id="identity" type="identity" class="form-control" name="identity"
-                                   value="{{ old('identity') }}" autofocus>
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                            @if ($errors->has('identity'))
+                            @if ($errors->has('email'))
                                 <span class="help-block">
-                                            <strong>{{ $errors->first('identity') }}</strong>
-                                        </span>
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
                             @endif
                         </div>
                     </div>
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="col-md-4 control-label">Password</label>
+                        <label class="col-md-4 control-label">Password</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password">
+                            <input type="password" class="form-control" name="password">
 
                             @if ($errors->has('password'))
                                 <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
                             @endif
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Login
+                        <div class="col-md-6 col-md-offset-4">
+                            <button class="btn waves-effect waves-light grey" type="submit" name="action">Submit
                             </button>
                         </div>
                     </div>
@@ -79,9 +55,10 @@
 
 
 
-            <aside class="col s4 pull-s8">
+            <aside class="col s4 pull-s8 menu-field">
 
-                <h3>TEST TEXT</h3>
+                <h3 class="center-align">BARROC IT</h3>
+                <h5 class="center-align">SOFTWARE FOR REAL</h5>
 
             </aside>
 
