@@ -13,5 +13,13 @@ $(document).ready(function() {
         $('.collapsible').collapsible();
     });
 
+    $(".secondAddress").hide();
+
+    $(":checkbox").click(function(event) {
+        if ($(this).is(":checked"))
+            $(".secondAddress").show();
+        else
+            $(".secondAddress").hide();
+    });
 
 });
