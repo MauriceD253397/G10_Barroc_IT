@@ -34,7 +34,12 @@
 h3 {
     margin: 30px 0;
 }
-
+table thead tr th{
+    width: calc(100% / 5)
+}
+table tbody tr th{
+    width: calc(100% / 5)
+}
 h5 {
     margin-bottom: 50px;
 }
