@@ -14,5 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/sales', 'SalesController@ShowSales')->name('sales');
 
+// Sales routes
+
+Route::get('/sales/dashboard', 'SalesController@ShowSales')->name('dashboard');
+
+Route::get('sales/addclient', 'SalesController@ShowAddClient')->name('add_client');

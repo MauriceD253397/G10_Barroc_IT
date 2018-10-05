@@ -10,8 +10,14 @@ class SalesController extends Controller
     public function ShowSales(){
 
 
-        return view('sales/sales',[
+        return view('sales/dashboard',[
             
+        ]);
+    }
+
+    public function ShowAddClient(){
+        return view ('sales/add_client', [
+
         ]);
     }
 
