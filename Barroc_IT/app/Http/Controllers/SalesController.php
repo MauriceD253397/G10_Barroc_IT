@@ -11,10 +11,14 @@ class SalesController extends Controller
 
         $allCompanyData = Company::all();
 
-        // Making a base query to get all data. Will optimise later if needed.
-
-        return view('sales/sales',[
+        return view('sales/dashboard',[
             'companyData' => $allCompanyData
+        ]);
+    }
+
+    public function ShowAddClient(){
+        return view ('sales/add_client', [
+
         ]);
     }
 

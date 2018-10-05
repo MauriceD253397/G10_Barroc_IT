@@ -21,16 +21,6 @@
     cursor: pointer;
 }
 
-.collapsible-body {
-    background: #FFFFFF;
-    margin-bottom: 10px !important;
-}
-
-.collapsible-header {
-    padding: auto 0.1px;
-}
-
-
 h3 {
     margin: 30px 0;
 }

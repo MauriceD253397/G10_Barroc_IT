@@ -16,8 +16,11 @@
 <link rel="stylesheet" href="{{ URL::asset('/css/sales/sales-dashboard.css') }}">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+
 <section class="row">
+
     <aside class="col s9 push-s3 content-field">
+
         <h3>All clients</h3>
         <table>
             <thead>
@@ -30,14 +33,16 @@
             </tr>
             </thead>
         </table>
-        @foreach($companyData as $data)
+
+
         <ul class="collapsible">
             <li>
                 <div class="collapsible-header">
+
                     <table>
                         <tbody>
                         <tr>
-                            <td>{{$data['']}}</td>
+                            <td>$contact</td>
                             <td>$company</td>
                             <td>$status</td>
                             <td>$date_of_action</td>
@@ -45,9 +50,13 @@
                         </tr>
                         </tbody>
                     </table>
+
                 </div>
+
                 <div class="col s12 collapsible-body">
+
                     <section class="col s4 address-content">
+
                         <h5>Address</h5>
                         <p><b>$company</b></p>
                         <p>Residence: <b>Stijnenberg 15</b></p>
@@ -57,22 +66,36 @@
                         <p><b>$company</b></p>
                         <p>Residence: <b>Stijnenberg 15</b></p>
                         <p>Zip: <b>4811 VD</b></p>
+
+
                     </section>
+
+
                     <section class="col s4 contact-content">
+
+
                         <h5>contact</h5>
                         <p>Phone number: <b>06-78476313</b></p>
                         <p>Fax number: <b>+44 161 999 8888</b></p>
                         <p>Last contact date: <b>10-10-1990</b></p>
+
                     </section>
+
+
                     <section class="col s4 offer-content">
+
                         <h5>Issue</h5>
                         <p>Offer number: <b>0676313</b></p>
                         <p>Offer status: <b>Failure to pay moneys</b></p>
+
                     </section>
+
                 </div>
             </li>
         </ul>
-        @endforeach
+
+
+
         <ul class="pagination">
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
 
@@ -86,6 +109,14 @@
 
         <h3 class="center-align">BARROC IT</h3>
         <h5 class="center-align">SOFTWARE FOR REAL</h5>
+
+        <ul>
+            <li><b>All clients</b></li>
+            <li>Add new client</li>
+            <li>Add new contact</li>
+            <li>Help</li>
+            <li>Logout</li>
+        </ul>
 
     </aside>
 
