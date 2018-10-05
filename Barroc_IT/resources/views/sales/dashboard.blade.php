@@ -19,7 +19,18 @@
 
 <section class="row">
     <aside class="col s9 push-s3 content-field">
-
+        <h3>All clients</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col s2">Contact</th>
+                    <th class="col s3">Company</th>
+                    <th class="col s2">Status</th>
+                    <th class="col s2">Date of Action</th>
+                    <th class="col s2">Reason of alert</th>
+                </tr>
+            </thead>
+        </table>
             @foreach($companyData as $data)
         <ul class="collapsible">
             <li>
