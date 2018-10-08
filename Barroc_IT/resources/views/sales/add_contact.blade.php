@@ -24,61 +24,28 @@
     <!-- content field, brown part of the screen -->
     <aside class="col s9 push-s3 content-field">
 
-        <h3>Add new client</h3>
+        <h3>Add new contact</h3>
 
-        <!-- form used to add a client to the database -->
+        <!-- form used to add a contact to an existing company -->
         <section class="col s6 company-form">
             <div class="row">
                 <form class="col s12">
                     <div class="row">
+                        <!-- input search field, need to find and select a company before being able to push a contact -->
                         <div class="input-field col s12">
-                            <input id="companyName" type="text" class="validate">
-                            <label for="companyName">Company name</label>
+                            <i class="material-icons prefix">textsms</i>
+                            <input type="text" id="autocomplete-company" class="autocomplete">
+                            <label for="autocomplete-company">Select a client..</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="address" type="text" class="validate">
-                            <label for="address">Address</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="zipcode" type="text" class="validate">
-                            <label for="zipcode">Zipcode</label>
-                        </div>
-                    </div>
-
-                    <!-- a checkbox to show and hide the form used to add a second address -->
-                    <label>
-                        <input type="checkbox" class="filled-in"/>
-                        <span>Add a second address</span>
-                    </label>
-
-
-                    <!-- form for the second address -->
-                    <section class="secondAddress">
-                        <div class="row">
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="address" type="text" class="validate">
-                                <label for="address">Address</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="zipcode" type="text" class="validate">
-                                <label for="zipcode">Zipcode</label>
-                            </div>
-                        </div>
-                    </section>
                 </form>
             </div>
+
         </section>
 
-        <!-- form with a client's contact information -->
+        <!-- the form for the contact information -->
         <section class="col s6 contact-form">
+
             <form class="row" action="#">
                 <div class="input-field col s12">
                     <input id="contactName" type="text" class="validate">
@@ -114,7 +81,6 @@
 
     </aside>
 
-
     <!-- the menu field with navigation -->
     <aside class="col s3 pull-s9 menu-field">
 
@@ -123,8 +89,8 @@
 
         <ul>
             <li><a href="{{route('dashboard')}}">All clients</a></li>
-            <li><a href="{{route('add_client')}}"><b>Add new client</b></a></li>
-            <li><a href="{{route('add_contact')}}">Add new contact</a></li>
+            <li><a href="{{route('add_client')}}">Add new client</a></li>
+            <li><a href="{{route('add_contact')}}"><b>Add new contact</b></a></li>
             <li><a href="{{route('help')}}">Help</a></li>
             <li><a>Logout</a></li>
         </ul>
@@ -132,6 +98,7 @@
     </aside>
 
 </section>
+
 
 <!-- including jquery and materialize frameworks -->
 <script type="text/javascript"
