@@ -1,0 +1,14 @@
+/* the header of the collapsible items */
+.collapsible-header {
+    padding: auto 0.1px;
+}
+
+/* the body of the collapsible items */
+.collapsible-body {
+    background: #FFFFFF !important;
+    margin-bottom: 10px !important;
+}
+
+.collapsible-body h5 {
+    margin: 20px 0 10px 0;
+}

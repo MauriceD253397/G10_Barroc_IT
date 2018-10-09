@@ -1,0 +1,38 @@
+.row {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* setting the height of the screen */
+.content-field, .menu-field {
+    min-height: 100vh !important; /* use "vh" instead of % */
+}
+
+/* setting the background color for the content field */
+.content-field {
+    background: #CFC1B5;
+}
+
+/* displaying the nav in the left menu field */
+.menu-field li {
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+/* hover on nav event */
+.menu-field li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+h3 {
+    margin: 30px 0;
+}
+
+h5 {
+    margin-bottom: 50px;
+}
+
+.menu-field a {
+    color: grey;
+}

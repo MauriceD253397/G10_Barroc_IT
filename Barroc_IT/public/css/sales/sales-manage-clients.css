@@ -1,0 +1,11 @@
+/* background color of table items */
+
+tr td {
+    background: #ffffff;
+}
+
+/* pointer hover event for the edit and remove icons */
+i:hover {
+    cursor: pointer;
+    margin: 0 5px;
+}

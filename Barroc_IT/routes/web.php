@@ -12,9 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('sales/dashboard');
 });
 
-Auth::routes();
+// Sales routes
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/sales/dashboard', 'SalesController@ShowSales')->name('dashboard');
+
+Route::get('sales/addclient', 'SalesController@ShowAddClient')->name('add_client');
+
+Route::get('sales/addcontact', 'SalesController@ShowAddContact')->name('add_contact');
+
+Route::get('sales/managecontacts', 'SalesController@ShowManageContacts')->name('manage_contact');
+
+Route::get('sales/editclient', 'SalesController@ShowEditClient')->name('edit_client');
+
+Route::get('sales/help', 'SalesController@ShowSalesHelp')->name('help');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
