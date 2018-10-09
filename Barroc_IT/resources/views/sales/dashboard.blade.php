@@ -26,47 +26,47 @@
 
     <!-- content field, brown part of the screen -->
     <aside class="col s9 push-s3 content-field">
-
         <h3>All clients</h3>
 
         <!-- titles of fields, above of main content -->
         <table>
             <thead>
-            <tr>
-                <th>Contact</th>
-                <th>Company</th>
-                <th>Status</th>
-                <th>Date of Action</th>
-                <th>Reason of Alert</th>
-            </tr>
+                <tr>
+                    <th class="col s2">Contact</th>
+                    <th class="col s3">Company</th>
+                    <th class="col s2">Status</th>
+                    <th class="col s2">Date of Action</th>
+                    <th class="col s2">Reason of alert</th>
+                </tr>
             </thead>
         </table>
-
-
+            @foreach($companyData as $data)
         <ul class="collapsible">
             <li>
                 <!-- collapsible header, each with it's own data -->
                 <div class="collapsible-header">
 
                     <table>
-                        <tbody>
+                        <thead>
                         <tr>
-                            <td>$contact</td>
-                            <td>$company</td>
-                            <td>$status</td>
-                            <td>$date_of_action</td>
-                            <td>$reason_of_alert</td>
+                            <th>{{$data['contactname']}}</th>
+                            <th>{{$data['companyname']}}</th>
+                            <th>@if($data['creditworthy' == 1])
+                                    Creditworthy
+                                @else
+                                    Not creditworthy
+                                @endif
+                            </th>
+                            <th>{{$data['update_time']}}</th>
+                            <th>Reason of Alert</th>
                         </tr>
-                        </tbody>
+                        </thead>
                     </table>
-
                 </div>
 
                 <!-- collapsible body, each with it's own data corresponding to its collapsible header -->
                 <div class="col s12 collapsible-body">
-
                     <section class="col s4 address-content">
-
                         <h5>Address</h5>
                         <p><b>$company</b></p>
                         <p>Residence: <b>Stijnenberg 15</b></p>
@@ -78,35 +78,23 @@
 
 
                     </section>
-
-
                     <section class="col s4 contact-content">
-
-
                         <h5>contact</h5>
                         <p>Phone number: <b>06-78476313</b></p>
                         <p>Fax number: <b>+44 161 999 8888</b></p>
                         <p>Last contact date: <b>10-10-1990</b></p>
-
                     </section>
-
-
                     <section class="col s4 offer-content">
-
                         <h5>Issue</h5>
                         <p>Offer number: <b>0676313</b></p>
                         <p>Offer status: <b>Failure to pay moneys</b></p>
-
                     </section>
-
                 </div>
             </li>
         </ul>
-
-
+        @endforeach
         <ul class="pagination">
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
         </ul>
 
