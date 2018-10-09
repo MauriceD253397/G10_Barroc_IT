@@ -1,21 +1,14 @@
-body {
-    overflow: hidden;
-}
-
-.content-field {
-    background: #CFC1B5;
-}
-
-.collapsible-body {
-    background: #FFFFFF;
-
-}
-
+/* the header of the collapsible items */
 .collapsible-header {
-    padding: 10px 0.1px;
+    padding: auto 0.1px;
 }
 
+/* the body of the collapsible items */
+.collapsible-body {
+    background: #FFFFFF !important;
+    margin-bottom: 10px !important;
+}
 
-h3 {
-    margin: 30px 0;
+.collapsible-body h5 {
+    margin: 20px 0 10px 0;
 }
