@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('/css/vw_login.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('/css/include.css') }}">
 
 
         <section class="row">
