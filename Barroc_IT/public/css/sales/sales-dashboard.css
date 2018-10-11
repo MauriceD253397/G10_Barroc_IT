@@ -12,3 +12,6 @@
 .collapsible-body h5 {
     margin: 20px 0 10px 0;
 }
+table thead tr th{
+    width: calc(100% / 5);
+}
