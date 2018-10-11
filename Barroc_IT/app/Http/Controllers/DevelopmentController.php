@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use \App\Development;
 class DevelopmentController extends Controller
 {
     public function index ()
     {
-        $projects = 'morguh';
+        $projects = \App\Development::all();
+
+        //dd($projects);
+
         return view('test_development')
             ->with('projects', $projects);
     }
