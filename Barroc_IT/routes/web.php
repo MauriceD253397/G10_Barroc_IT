@@ -17,3 +17,5 @@ Route::get('/', function () {
 });
 
 Route::get('/development', 'DevelopmentController@index');
+
+route::post('/development/done', 'DevelopmentController@done')->name('development.done');
