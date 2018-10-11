@@ -30,3 +30,6 @@ Route::get('sales/editclient', 'SalesController@ShowEditClient')->name('edit_cli
 Route::get('sales/help', 'SalesController@ShowSalesHelp')->name('help');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
