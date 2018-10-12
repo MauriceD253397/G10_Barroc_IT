@@ -33,7 +33,7 @@
             <thead>
                 <tr>
                     <th class="col s2">Contact</th>
-                    <th class="col s3">Company</th>
+                    <th class="col s3"><span>Company </th></span>
                     <th class="col s2">Status</th>
                     <th class="col s2">Date of Action</th>
                     <th class="col s2">Reason of alert</th>
@@ -103,10 +103,8 @@
 
     <!-- the menu field with navigation -->
     <aside class="col s3 pull-s9 menu-field">
-
         <h3 class="center-align">BARROC IT</h3>
         <h5 class="center-align">SOFTWARE FOR REAL</h5>
-
         <ul>
             <li><a href="{{route('dashboard')}}"><b>All clients</b></a></li>
             <li><a href="{{route('add_client')}}">Add new client</a></li>
@@ -114,9 +112,7 @@
             <li><a href="{{route('help')}}">Help</a></li>
             <li><a>Logout</a></li>
         </ul>
-
     </aside>
-
 </section>
 
 <!-- including jquery and materialize frameworks -->
