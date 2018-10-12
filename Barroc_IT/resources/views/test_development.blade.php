@@ -9,19 +9,21 @@
 </head>
 <body>
     <h1>projects</h1>
+    {{--test form--}}
     @foreach($projects as $project)
-        <p>{{$project->title}}</p>
+        <H3>{{$project->title}}</H3>
         <p>{{$project->status}}</p>
         <p>{{$project->start_date}}</p>
         <p>{{$project->death_line}}</p>
+        {{--knop om te zeggen dat het project klaar is--}}
         <form action="{{route('development.done')}}" method="post">
-
             <input type="hidden" name="id" value="{{$project->id}}">
             @csrf
             <input type="submit" value="it is done">
+        </form>
         @endforeach
 
 
-    </form>
+
 </body>
 </html>

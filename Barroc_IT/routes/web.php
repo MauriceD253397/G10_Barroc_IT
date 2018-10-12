@@ -35,5 +35,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/development', 'DevelopmentController@index');
-
-route::post('/development/done', 'DevelopmentController@done')->name('development.done');
+//route om de database te updaten
+route::post('/development/', 'DevelopmentController@done')->name('development.done');
