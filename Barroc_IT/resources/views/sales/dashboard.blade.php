@@ -57,7 +57,7 @@
                                     Not creditworthy
                                 @endif
                             </th>
-                            <th>{{$data['update_time']}}</th>
+                            <th>{{$data['updated_at']}}</th>
                             <th>Reason of Alert</th>
                         </tr>
                         </thead>
