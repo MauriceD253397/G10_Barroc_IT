@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 
 });
-
+//route om de database te laten zien
 Route::get('/development', 'DevelopmentController@index');
-
-route::post('/development/done', 'DevelopmentController@done')->name('development.done');
+//route om de database te updaten
+route::post('/development/', 'DevelopmentController@done')->name('development.done');
