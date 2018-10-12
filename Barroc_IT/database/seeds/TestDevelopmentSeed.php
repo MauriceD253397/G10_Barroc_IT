@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Faker\Factory as Faker;
 class TestDevelopmentSeed extends Seeder
 {
     /**
@@ -12,12 +12,16 @@ class TestDevelopmentSeed extends Seeder
      */
     public function run()
     {
-        DB::table('tbl_projects')
-            ->insert([
-                'title' => str_random(10),
-                'status' => 'indevelopment',
-                'start_date' => '2018-10-11',
-                'death_line' => '2018-11-11'
-            ]);
+        $faker = Faker::create();
+        foreach (range(1,10) as $index) {
+            DB::table('tbl_projects')
+                ->insert([
+                    'title' => $faker->city,
+                    'status' => 'indevelopment',
+                    'start_date' => $faker->dateTimeThisMonth(),
+                    'death_line' => $faker->dateTimeThisMonth()
+                ]);
+        }
+
     }
 }
