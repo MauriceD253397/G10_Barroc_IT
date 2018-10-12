@@ -11,8 +11,8 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
-<link rel="stylesheet"
-      href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('/css/include.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('/css/sales/sales-dashboard.css') }}">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -91,7 +91,6 @@
                 </div>
             </li>
         </ul>
-
 
 
         <ul class="pagination">
