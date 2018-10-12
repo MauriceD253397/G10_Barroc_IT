@@ -26,7 +26,7 @@ class CreateSalesTable extends Migration
             $table->string('housenumber2');
             $table->string('houseletter2');
             $table->string('city2');
-            $table->integer('faxnumber');
+            $table->string('faxnumber');
             $table->boolean('creditworthy');
             $table->timestamps();
             // !!!! THIS IS A TEMPORARY MIGRATION TABLE MAN !!!!
