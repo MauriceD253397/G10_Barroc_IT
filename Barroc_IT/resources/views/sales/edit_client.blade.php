@@ -26,7 +26,6 @@
 
         <h3>Add new client</h3>
 
-        <!-- form used to add a client to the database -->
         <section class="col s6 company-form">
             <div class="row">
                 <form class="col s12">
@@ -49,16 +48,18 @@
                         </div>
                     </div>
 
-                    <!-- a checkbox to show and hide the form used to add a second address -->
                     <label>
                         <input type="checkbox" class="filled-in"/>
                         <span>Add a second address</span>
                     </label>
 
 
-                    <!-- form for the second address -->
                     <section class="secondAddress">
                         <div class="row">
+                            <div class="input-field col s12">
+                                <input id="companyName" type="text" class="validate">
+                                <label for="companyName">Company name</label>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
@@ -73,12 +74,15 @@
                             </div>
                         </div>
                     </section>
+
+
                 </form>
             </div>
+
         </section>
 
-        <!-- form with a client's contact information -->
         <section class="col s6 contact-form">
+
             <form class="row" action="#">
                 <div class="input-field col s12">
                     <input id="contactName" type="text" class="validate">
@@ -115,15 +119,14 @@
     </aside>
 
 
-    <!-- the menu field with navigation -->
     <aside class="col s3 pull-s9 menu-field">
 
         <h3 class="center-align">BARROC IT</h3>
         <h5 class="center-align">SOFTWARE FOR REAL</h5>
 
         <ul>
-            <li><a href="{{route('dashboard')}}">All clients</a></li>
-            <li><a href="{{route('add_client')}}"><b>Add new client</b></a></li>
+            <li><a href="{{route('dashboard')}}"><b>All clients</b></a></li>
+            <li><a href="{{route('add_client')}}">Add new client</a></li>
             <li><a href="{{route('add_contact')}}">Add new contact</a></li>
             <li><a href="{{route('help')}}">Help</a></li>
             <li><a>Logout</a></li>
@@ -133,12 +136,11 @@
 
 </section>
 
-<!-- including jquery and materialize frameworks -->
+
 <script type="text/javascript"
         src="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js') }}"></script>
 <script type="text/javascript"
         src="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js') }}"></script>
-<!-- including custom js file -->
 <script type="text/javascript" src="{{ URL::asset('/js/include.js') }}"></script>
 
 </body>

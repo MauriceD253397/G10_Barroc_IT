@@ -1,40 +1,14 @@
-.row {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.content-field, .menu-field {
-    min-height: 100vh !important; /* use "vh" instead of % */
-}
-
-.content-field {
-    background: #CFC1B5;
-}
-
-.menu-field li {
-    margin-left: 20%;
-    margin-bottom: 20px;
-}
-
-.menu-field li:hover {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.collapsible-body {
-    background: #FFFFFF;
-    margin-bottom: 10px !important;
-}
-
+/* the header of the collapsible items */
 .collapsible-header {
     padding: auto 0.1px;
 }
 
-
-h3 {
-    margin: 30px 0;
+/* the body of the collapsible items */
+.collapsible-body {
+    background: #FFFFFF !important;
+    margin-bottom: 10px !important;
 }
 
-h5 {
-    margin-bottom: 50px;
+.collapsible-body h5 {
+    margin: 20px 0 10px 0;
 }
