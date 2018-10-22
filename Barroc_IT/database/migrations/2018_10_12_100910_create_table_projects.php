@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TestDevelopmentTable extends Migration
+class CreateTableProjects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class TestDevelopmentTable extends Migration
      */
     public function up()
     {
-        //this is fore testing stuff and not fore the final database
-        Schema::create('tbl_projects', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('status');
-            $table->date('start_date');
-            $table->date('death_line');
+        Schema::create('projects', function (Blueprint $table) {
+            $table->increments('project_id'); // PK
+            $table->unsignedInteger('contact_id'); // FK
+            $table->unsignedInteger('invoice_id'); // FK
+            $table->integer('project_status');
 
-
+            $table->timestamps();
         });
     }
 
