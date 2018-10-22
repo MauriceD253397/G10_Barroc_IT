@@ -24,6 +24,27 @@ class SalesController extends Controller
         ]);
     }
 
+    public function AddClient(Request $request){
+        dd($request);
+        $client = new Contact();
+
+
+        $client->name = $request->name;
+        $client->price = $request->description;
+        $client->category_id = 1;
+
+
+
+
+
+
+
+        $client->save();
+
+
+        return view('sales/add_client',[]);
+    }
+
     public function ShowAddContact()
     {
         return view('sales/add_contact', [

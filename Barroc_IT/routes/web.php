@@ -33,3 +33,5 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('sales/add_client', 'SalesController@AddClient')->name('add_client');

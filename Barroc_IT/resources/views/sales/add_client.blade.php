@@ -32,19 +32,19 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="companyName" type="text" class="validate">
+                            <input name="companyName" id="companyName" type="text" class="validate">
                             <label for="companyName">Company name</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="address" type="text" class="validate">
+                            <input name="address" id="address" type="text" class="validate">
                             <label for="address">Address</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="zipcode" type="text" class="validate">
+                            <input name="zipcode" id="zipcode" type="text" class="validate">
                             <label for="zipcode">Zipcode</label>
                         </div>
                     </div>
@@ -55,21 +55,20 @@
                         <span>Add a second address</span>
                     </label>
 
-
                     <!-- form for the second address -->
                     <section class="secondAddress">
                         <div class="row">
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="address" type="text" class="validate">
-                                <label for="address">Address</label>
+                                <input name="address2" id="address2" type="text" class="validate">
+                                <label for="address2">Address</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="zipcode" type="text" class="validate">
-                                <label for="zipcode">Zipcode</label>
+                                <input name="zipcode2" id="zipcode2" type="text" class="validate">
+                                <label for="zipcode2">Zipcode</label>
                             </div>
                         </div>
                     </section>
@@ -79,28 +78,29 @@
 
         <!-- form with a client's contact information -->
         <section class="col s6 contact-form">
-            <form class="row" action="#">
+            <form class="row" action="{{url('sales/add_client')}}" method="POST">
+                @csrf
                 <div class="input-field col s12">
-                    <input id="contactName" type="text" class="validate">
+                    <input name="contactName" id="contactName" type="text" class="validate">
                     <label for="contactName">Contact person</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="contactInitials" type="text" class="validate">
+                    <input name="contactInitials" id="contactInitials" type="text" class="validate">
                     <label for="contactInitials">Contact initials</label>
                 </div>
 
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
+                    <input name="email" id="email" type="email" class="validate">
                     <label for="email">E-mail</label>
                 </div>
 
                 <div class="input-field col s12">
-                    <input id="phoneNumber" type="tel" class="validate">
+                    <input name="phoneNumber" id="phoneNumber" type="tel" class="validate">
                     <label for="phoneNumber">Telephone number</label>
                 </div>
 
                 <div class="input-field col s12">
-                    <input id="faxNumber" type="tel" class="validate">
+                    <input name="faxNumber  " id="faxNumber" type="tel" class="validate">
                     <label for="faxNumber">Fax number</label>
                 </div>
                 <button class="btn waves-effect waves-light grey darken-1" type="submit" name="action">
