@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d97805ac-d90f-47ad-a86e-897301088148" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Barroc_IT/app/Company.php" afterPath="$PROJECT_DIR$/Barroc_IT/app/Company.php" />
       <change beforePath="$PROJECT_DIR$/Barroc_IT/app/Http/Controllers/SalesController.php" afterPath="$PROJECT_DIR$/Barroc_IT/app/Http/Controllers/SalesController.php" />
-      <change beforePath="$PROJECT_DIR$/Barroc_IT/public/css/sales/sales-manage-clients.css" afterPath="$PROJECT_DIR$/Barroc_IT/public/css/sales/sales-manage-clients.css" />
-      <change beforePath="$PROJECT_DIR$/Barroc_IT/resources/views/sales/add_client.blade.php" afterPath="$PROJECT_DIR$/Barroc_IT/resources/views/sales/add_client.blade.php" />
     </list>
     <ignored path="$PROJECT_DIR$/Barroc_IT/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/Barroc_IT/vendor/dnoegel/php-xdg-base-dir/" />
@@ -86,7 +84,7 @@
       <file leaf-file-name="add_client.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Barroc_IT/resources/views/sales/add_client.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1701">
+            <state relative-caret-position="1344">
               <caret line="81" column="42" lean-forward="false" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
               <folding>
                 <marker date="1540289500264" expanded="true" signature="357:385" ph="..." />
@@ -109,8 +107,8 @@
       <file leaf-file-name="SalesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Barroc_IT/app/Http/Controllers/SalesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="546">
+              <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -120,6 +118,16 @@
       </file>
       <file leaf-file-name="Company.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Barroc_IT/app/Company.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018_10_12_095640_create_table_companies.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Barroc_IT/database/migrations/2018_10_12_095640_create_table_companies.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -149,6 +157,7 @@
         <option value="$PROJECT_DIR$/Barroc_IT/public/css/sales/sales-manage-clients.css" />
         <option value="$PROJECT_DIR$/Barroc_IT/resources/views/sales/add_client.blade.php" />
         <option value="$PROJECT_DIR$/Barroc_IT/app/Http/Controllers/SalesController.php" />
+        <option value="$PROJECT_DIR$/Barroc_IT/app/Company.php" />
       </list>
     </option>
   </component>
@@ -226,8 +235,9 @@
       <path value="$PROJECT_DIR$/Barroc_IT/vendor/symfony/polyfill-php72" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="846" />
+    <option name="y" value="-32" />
     <option name="width" value="960" />
     <option name="height" value="1032" />
   </component>
@@ -290,6 +300,19 @@
               <item name="G10_Barroc_IT" type="b2602c69:ProjectViewProjectNode" />
               <item name="G10_Barroc_IT" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Barroc_IT" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="G10_Barroc_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G10_Barroc_IT" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Barroc_IT" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="G10_Barroc_IT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G10_Barroc_IT" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Barroc_IT" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -344,7 +367,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file://C:/Users/gijss_000/Desktop/Radius/Leerjaar2/p5/Project/G10_Barroc_IT/Barroc_IT/routes" />
+    <property name="SearchEverywhereHistoryKey" value="migration&#9;FILE&#9;file://C:/Users/gijss_000/Desktop/Radius/Leerjaar2/p5/Project/G10_Barroc_IT/Barroc_IT/database/migrations&#10;routes&#9;FILE&#9;file://C:/Users/gijss_000/Desktop/Radius/Leerjaar2/p5/Project/G10_Barroc_IT/Barroc_IT/routes" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -372,18 +395,18 @@
       <option name="presentableId" value="Default" />
       <updated>1540287830686</updated>
       <workItem from="1540287831784" duration="2030000" />
-      <workItem from="1540292344347" duration="2446000" />
+      <workItem from="1540292344347" duration="4697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4476000" />
+    <option name="totallyTimeSpent" value="6727000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1032" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18152866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2734375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -461,7 +484,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Barroc_IT/resources/views/sales/add_client.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1701">
+        <state relative-caret-position="1344">
           <caret line="81" column="42" lean-forward="false" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
           <folding>
             <marker date="1540289500264" expanded="true" signature="357:385" ph="..." />
@@ -490,18 +513,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Barroc_IT/app/Http/Controllers/SalesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="546">
+          <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Barroc_IT/app/Company.php">
+    <entry file="file://$PROJECT_DIR$/Barroc_IT/database/migrations/2018_10_12_095640_create_table_companies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Barroc_IT/app/Company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -29,7 +29,7 @@ class SalesController extends Controller
     public function AddClient(Request $request){
 
         $client = new Contact();
-        $company = new Companies();
+        $company = new Company();
 
         $client->contact_id;
         $client->contact_name = $request->contactName;
@@ -49,8 +49,7 @@ class SalesController extends Controller
         $client->updated_at = time();
         $company->company_name = $request->companyName;
         $client->save();
-
-
+        $company->save();
 
     return view('sales/add_client',[]);
     }
