@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('sales/dashboard');
+    return view('welcome');
 });
 
 // Sales routes
