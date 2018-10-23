@@ -17,6 +17,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- including custom CSS files -->
 <link rel="stylesheet" href="{{ URL::asset('/css/include.css') }}">
+<!-- including the clients CSS files for pages where we have something including clients -->
+<link rel="stylesheet" href="{{ URL::asset('/css/sales/sales-manage-clients.css') }}">
 
 
 <section class="row">
@@ -27,91 +29,84 @@
         <h3>Add new client</h3>
 
         <!-- form used to add a client to the database -->
-        <section class="col s6 company-form">
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="companyName" id="companyName" type="text" class="validate">
-                            <label for="companyName">Company name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="address" id="address" type="text" class="validate">
-                            <label for="address">Address</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="zipcode" id="zipcode" type="text" class="validate">
-                            <label for="zipcode">Zipcode</label>
-                        </div>
-                    </div>
-
-                    <!-- a checkbox to show and hide the form used to add a second address -->
-                    <label>
-                        <input type="checkbox" class="filled-in"/>
-                        <span>Add a second address</span>
-                    </label>
-
-                    <!-- form for the second address -->
-                    <section class="secondAddress">
-                        <div class="row">
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input name="address2" id="address2" type="text" class="validate">
-                                <label for="address2">Address</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input name="zipcode2" id="zipcode2" type="text" class="validate">
-                                <label for="zipcode2">Zipcode</label>
-                            </div>
-                        </div>
-                    </section>
-                </form>
-            </div>
-        </section>
 
         <!-- form with a client's contact information -->
-        <section class="col s6 contact-form">
-            <form class="row" action="{{url('sales/add_client')}}" method="POST">
+            <form class="addClient" action="{{url('sales/add_client')}}" method="POST">
                 @csrf
-                <div class="input-field col s12">
+                <div class="part1">
+                <div class="row">
+                    <div class="Company">
+                        <input name="companyName" id="companyName" type="text" class="validate">
+                        <label for="companyName">Company name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="Housing">
+                        <input name="address" id="address" type="text" class="validate">
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="zip">
+                        <input name="zipcode" id="zipcode" type="text" class="validate">
+                        <label for="zipcode">Zipcode</label>
+                    </div>
+                </div>
+
+                <!-- a checkbox to show and hide the form used to add a second address -->
+                <label>
+                    <input type="checkbox" class="filled-in"/>
+                    <span>Add a second address</span>
+                </label>
+
+                <!-- form for the second address -->
+                <section class="secondAddress">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="extraAddress">
+                            <input name="address2" id="address2" type="text" class="validate">
+                            <label for="address2">Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="extraZip">
+                            <input name="zipcode2" id="zipcode2" type="text" class="validate">
+                            <label for="zipcode2">Zipcode</label>
+                        </div>
+                    </div>
+                </section>
+                </div>
+
+                <div class="part2">
+                <div class="contact">
                     <input name="contactName" id="contactName" type="text" class="validate">
                     <label for="contactName">Contact person</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="initials">
                     <input name="contactInitials" id="contactInitials" type="text" class="validate">
                     <label for="contactInitials">Contact initials</label>
                 </div>
 
-                <div class="input-field col s12">
+                <div class="mail">
                     <input name="email" id="email" type="email" class="validate">
                     <label for="email">E-mail</label>
                 </div>
 
-                <div class="input-field col s12">
+                <div class="phone">
                     <input name="phoneNumber" id="phoneNumber" type="tel" class="validate">
                     <label for="phoneNumber">Telephone number</label>
                 </div>
 
-                <div class="input-field col s12">
+                <div class="fax">
                     <input name="faxNumber  " id="faxNumber" type="tel" class="validate">
                     <label for="faxNumber">Fax number</label>
                 </div>
                 <button class="btn waves-effect waves-light grey darken-1" type="submit" name="action">
                     Submit
                 </button>
+                </div>
             </form>
-
-
-        </section>
-
-
     </aside>
 
 
