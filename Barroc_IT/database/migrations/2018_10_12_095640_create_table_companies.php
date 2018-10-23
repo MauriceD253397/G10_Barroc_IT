@@ -17,6 +17,7 @@ class CreateTableCompanies extends Migration
             $table->increments('company_id'); // PK
             $table->unsignedInteger('appointment_number'); // FK
             $table->unsignedInteger('project_id'); // FK
+            $table->string('company_name');
         });
     }
 
