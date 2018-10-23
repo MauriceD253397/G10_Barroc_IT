@@ -13,11 +13,13 @@ class DevelopmentController extends Controller
         //alles uit de database te halen
         $projects = \App\Project::all();
         $contacts = \App\Contact::all();
+        $companies = \App\Company::all();
 
         //naar de view te gaan
         return view('Development\index')
             ->with('projects', $projects)
-            ->with('contacts', $contacts);
+            ->with('contacts', $contacts)
+            ->with('companies', $companies);
     }
 
     public function done ()
