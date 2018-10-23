@@ -32,15 +32,16 @@
         <table>
             <thead>
             <tr>
-                <th class="col s2">Contact</th>
-                <th class="col s3">Company</th>
+                <th class="col s2">Clients</th>
+                <th class="col s2">Company</th>
                 <th class="col s2">Status</th>
                 <th class="col s2">Date of Action</th>
-                <th class="col s2">Reason of alert</th>
+                <th class="col s2">Creditworthy</th>
+                <th class="col s2">Saldo</th>
             </tr>
             </thead>
         </table>
-        {{--@foreach($companyData as $data)--}}
+        @foreach($companyData as $data)
             <ul class="collapsible">
                 <li>
                     <!-- collapsible header, each with it's own data -->
@@ -49,15 +50,18 @@
                         <table>
                             <thead>
                             <tr>
-                                {{--<th>{{$data['contactname']}}</th>--}}
-                                {{--<th>{{$data['companyname']}}</th>--}}
-                                {{--<th>@if($data['creditworthy' == 1])--}}
-                                        {{--Creditworthy--}}
-                                    {{--@else--}}
-                                        {{--Not creditworthy--}}
-                                    {{--@endif--}}
+                                <th>{{$data->contacts->contactname}}</th>
+                                <th>{{$data->companyname}}</th>
+                                <th>{{$data->status}}</th>
+                                <th>{{$data->appointments->date_of_action}}</th>
+                                <th>@if($data->creditworthy == 1)
+                                        Creditworthy
+                                    @else
+                                        Not creditworthy
+                                    @endif
                                 </th>
-                                {{--<th>{{$data['update_time']}}</th>--}}
+                                <th>{{$data->invoices->factuur_saldo}}</th>
+                                <th>{{$data->update_time}}</th>
                                 <th>Reason of Alert</th>
                             </tr>
                             </thead>
@@ -92,7 +96,7 @@
                     </div>
                 </li>
             </ul>
-        {{--@endforeach--}}
+        @endforeach
         <ul class="pagination">
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
@@ -109,8 +113,6 @@
 
         <ul>
             <li><a href="{{route('dashboard')}}"><b>All clients</b></a></li>
-            <li><a href="{{route('add_client')}}">Add new client</a></li>
-            <li><a href="{{route('add_contact')}}">Add new contact</a></li>
             <li><a href="{{route('help')}}">Help</a></li>
             <li><a>Logout</a></li>
         </ul>

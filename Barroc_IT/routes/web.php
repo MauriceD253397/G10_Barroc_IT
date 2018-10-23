@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 Route::get('/sales/dashboard', 'SalesController@ShowSales')->name('dashboard');
 
-Route::get('/finance/dashboard', 'FinanceController@ShowFinance')->name('dashboard');
 
 Route::get('sales/addclient', 'SalesController@ShowAddClient')->name('add_client');
 
@@ -30,6 +29,8 @@ Route::get('sales/managecontacts', 'SalesController@ShowManageContacts')->name('
 Route::get('sales/editclient', 'SalesController@ShowEditClient')->name('edit_client');
 
 Route::get('sales/help', 'SalesController@ShowSalesHelp')->name('help');
+
+Route::get('/finance/dashboard', 'FinanceController@ShowFinance')->name('dashboard');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
