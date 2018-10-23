@@ -49,7 +49,7 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>{{$data['contactname']}}</th>
+                            <th>{{$data->contact->name}}</th>
                             <th>{{$data['companyname']}}</th>
                             <th>@if($data['creditworthy' == 1])
                                     Creditworthy
