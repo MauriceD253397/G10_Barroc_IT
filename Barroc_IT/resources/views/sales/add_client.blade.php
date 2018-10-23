@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="Housing">
+                    <div class="address">
                         <input name="address" id="address" type="text" class="validate">
                         <label for="address">Address</label>
                     </div>
@@ -52,40 +52,20 @@
                         <label for="zipcode">Zipcode</label>
                     </div>
                 </div>
-
-                <!-- a checkbox to show and hide the form used to add a second address -->
-                <label>
-                    <input type="checkbox" class="filled-in"/>
-                    <span>Add a second address</span>
-                </label>
-
-                <!-- form for the second address -->
-                <section class="secondAddress">
-                    <div class="row">
-                    </div>
-                    <div class="row">
-                        <div class="extraAddress">
-                            <input name="address2" id="address2" type="text" class="validate">
-                            <label for="address2">Address</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="extraZip">
-                            <input name="zipcode2" id="zipcode2" type="text" class="validate">
-                            <label for="zipcode2">Zipcode</label>
-                        </div>
-                    </div>
-                </section>
+                    <div class="residence">
+                        <input name="residence" id="residence" type="text" class="validate">
+                        <label for="residence">Residence</label>
+                </div>
                 </div>
 
                 <div class="part2">
                 <div class="contact">
                     <input name="contactName" id="contactName" type="text" class="validate">
-                    <label for="contactName">Contact person</label>
+                    <label for="contactName">Contact Name</label>
                 </div>
-                <div class="initials">
-                    <input name="contactInitials" id="contactInitials" type="text" class="validate">
-                    <label for="contactInitials">Contact initials</label>
+                <div class="last">
+                    <input name="lastName" id="lastName" type="text" class="validate">
+                    <label for="lastName">Last Name</label>
                 </div>
 
                 <div class="mail">
@@ -99,7 +79,7 @@
                 </div>
 
                 <div class="fax">
-                    <input name="faxNumber  " id="faxNumber" type="tel" class="validate">
+                    <input name="faxNumber" id="faxNumber" type="tel" class="validate">
                     <label for="faxNumber">Fax number</label>
                 </div>
                 <button class="btn waves-effect waves-light grey darken-1" type="submit" name="action">

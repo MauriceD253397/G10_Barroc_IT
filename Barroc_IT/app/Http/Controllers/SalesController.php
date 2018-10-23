@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Contact;
+use phpDocumentor\Reflection\Types\Null_;
+
 class SalesController extends Controller
 {
 
@@ -23,26 +26,33 @@ class SalesController extends Controller
 
         ]);
     }
-
     public function AddClient(Request $request){
-        dd($request);
+
         $client = new Contact();
+        $company = new Companies();
 
-
-        $client->name = $request->name;
-        $client->price = $request->description;
-        $client->category_id = 1;
-
-
-
-
-
-
-
+        $client->contact_id;
+        $client->contact_name = $request->contactName;
+        $client->last_name = $request->lastName;
+        $client->adress = $request->address;
+        $client->zipcode = $request->zipcode;
+        $client->residence = $request->residence;
+        $client->telephone_number = $request->phoneNumber;
+        $client->fax_number= $request->faxNumber;
+        $client->email = $request->email;
+        $client->bankrekeningnummer = NULL;
+        $client->saldo = NULL;
+        $client->limiet_rood = NULL;
+        $client->grootboeknummer = NULL;
+        $client->creditworthy = NULL;
+        $client->created_at = time();
+        $client->updated_at = time();
+        $company->company_name = $request->companyName;
         $client->save();
 
 
-        return view('sales/add_client',[]);
+
+    return view('sales/add_client',[]);
     }
 
     public function ShowAddContact()
