@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('/sales/dashboard', 'SalesController@ShowSales')->name('dashboard');
 
+Route::get('/finance/dashboard', 'FinanceController@ShowFinance')->name('dashboard');
+
 Route::get('sales/addclient', 'SalesController@ShowAddClient')->name('add_client');
 
 Route::get('sales/addcontact', 'SalesController@ShowAddContact')->name('add_contact');
