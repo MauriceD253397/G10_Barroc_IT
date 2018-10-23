@@ -11,21 +11,22 @@ class DevelopmentController extends Controller
     public function index ()
     {
         //alles uit de database te halen
-        $projects = \App\Development::all();
-
+        $projects = \App\Project::all();
+        $contacts = \App\Contact::all();
 
         //naar de view te gaan
-        return view('test_development')
-            ->with('projects', $projects);
+        return view('Development\index')
+            ->with('projects', $projects)
+            ->with('contacts', $contacts);
     }
 
     public function done ()
     {
 
         //om de database te updaten zodat er staat dat het programma werkt
-            DB::table('tbl_projects')
+            DB::table('projects')
                 ->where('id', $_POST )
-                ->update(['status' => 'done'])
+                ->update(['project_statusx' => 'done'])
             ;
             // alles uit de database halen om de view opnieuw te laten zien
             $projects = \App\Development::all();
