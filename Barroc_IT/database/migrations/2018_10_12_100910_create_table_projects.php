@@ -18,6 +18,8 @@ class CreateTableProjects extends Migration
             $table->unsignedInteger('contact_id'); // FK
             $table->unsignedInteger('invoice_id'); // FK
             $table->integer('project_status');
+            $table->dateTime('death-line');
+            $table->dateTime('start-time');
 
             $table->timestamps();
         });
