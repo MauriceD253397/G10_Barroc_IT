@@ -20,7 +20,7 @@ class CreateTableAppointments extends Migration
             $table->dateTime('date_of_action');
             $table->dateTime('last_contact_date');
             $table->dateTime('next_action');
-            $table->string('appointment_description');
+            $table->Text('appointment_description');
             $table->integer('sale_percentage');
         });
     }

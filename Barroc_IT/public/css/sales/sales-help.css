@@ -1,0 +1,9 @@
+/* help item titles */
+h2 {
+    margin: 50px 0;
+}
+
+/* help item descriptions */
+p {
+    max-width: 75%;
+}

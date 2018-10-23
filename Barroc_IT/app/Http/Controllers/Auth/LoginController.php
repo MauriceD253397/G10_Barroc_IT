@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Validation\ValidationException;
+/**
+ * Class LoginController
+ * @package App\Http\Controllers\Auth
+ */
 class LoginController extends Controller
 {
     /*
@@ -35,5 +42,10 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
     }
 }
