@@ -16,6 +16,7 @@ class CreateTableAppointments extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('appointment_number'); // PK van appointments FK van companies
             $table->unsignedInteger('project_id'); // FK
+            $table->unsignedInteger('company_id'); // FK
             $table->string('appointment_name');
             $table->dateTime('date_of_action');
             $table->dateTime('last_contact_date');

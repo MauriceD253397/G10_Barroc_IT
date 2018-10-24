@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompanyProjectsForeign extends Migration
+class CreateCompanyContactsForeign extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateCompanyProjectsForeign extends Migration
     public function up()
     {
         Schema::table('companies', function (Blueprint $table) {
-            $table->foreign('project_id')->references('project_id')->on('projects');
+            $table->foreign('contact_id')->references('contact_id')->on('contacts');
         });
     }
 
@@ -26,7 +26,7 @@ class CreateCompanyProjectsForeign extends Migration
     public function down()
     {
         Schema::table('companies', function (Blueprint $table) {
-            $table->dropForeign(['project_id']);
+            $table->dropForeign(['contact_id']);
         });
     }
 }

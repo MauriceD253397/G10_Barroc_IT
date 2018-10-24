@@ -15,8 +15,7 @@ class CreateTableCompanies extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('company_id'); // PK
-            $table->unsignedInteger('appointment_number'); // FK
-            $table->unsignedInteger('project_id'); // FK
+            $table->unsignedInteger('contact_id'); // FK
             $table->string('company_name');
         });
     }

@@ -13,15 +13,13 @@ class CompaniesTableSeeder extends Seeder
      */
     public function run()
     {
-        $projects = \App\Project::all()->pluck('project_id')->toArray();
-        $appointment_number = \App\Appointment::all()->pluck('appointment_number')->toArray();
+        $contact_id = \App\Contact::all()->pluck('contact_id')->toArray();
         $faker = Faker::create('nl_NL');
 
 
         DB::table('companies')
             ->insert([
-                'appointment_number' => $faker->randomElement($appointment_number),
-                'project_id' => $faker->randomElement($projects),
+                'contact_id' => $faker->randomElement($contact_id),
                 'company_name' => $faker->company
                 ]);
     }

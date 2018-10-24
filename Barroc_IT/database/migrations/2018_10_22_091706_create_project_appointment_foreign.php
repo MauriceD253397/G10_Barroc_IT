@@ -25,7 +25,7 @@ class CreateProjectAppointmentForeign extends Migration
      */
     public function down()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('appointments', function (Blueprint $table) {
             $table->dropForeign(['project_id']);
         });
     }
