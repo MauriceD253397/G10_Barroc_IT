@@ -3,8 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
-
-class CompaniesTableSeeder extends Seeder
+class InvoicesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,15 +13,15 @@ class CompaniesTableSeeder extends Seeder
     public function run()
     {
         $projects = \App\Project::all()->pluck('project_id')->toArray();
-        $appointment_number = \App\Appointment::all()->pluck('appointment_number')->toArray();
         $faker = Faker::create('nl_NL');
 
 
-        DB::table('companies')
+        DB::table('invoices')
             ->insert([
-                'appointment_number' => $faker->randomElement($appointment_number),
                 'project_id' => $faker->randomElement($projects),
-                'company_name' => $faker->company
+                'btw_amount' => 21,
+                'factuur_status' => random_int(0,1),
+                'factuur_saldo' => random_int(50, 2000)
                 ]);
     }
 }

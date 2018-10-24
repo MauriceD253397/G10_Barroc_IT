@@ -13,11 +13,13 @@ class AppointmentsTableSeeder extends Seeder
      */
     public function run()
     {
+        $projects = \App\Project::all()->pluck('project_id')->toArray();
         $faker = Faker::create('nl_NL');
 
 
-        DB::table('developers')
+        DB::table('appointments')
             ->insert([
+                'project_id' => $faker->randomElement($projects),
                 'appointment_name' => $faker->title,
                 'date_of_action' => $faker->dateTime,
                 'last_contact_date' => $faker->dateTime,
