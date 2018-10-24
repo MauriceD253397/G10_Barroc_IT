@@ -26,21 +26,23 @@
 
     <!-- content field, brown part of the screen -->
     <aside class="col s9 push-s3 content-field">
-        <h3>All clients</h3>
+        <h3>All Projects</h3>
 
         <!-- titles of fields, above of main content -->
         <table>
             <thead>
                 <tr>
-                    <th class="col s2">Contact</th>
-                    <th class="col s3"><span>Company </th></span>
+                    <th class="col s2">title</th>
+                    <th class="col s2">contact</th>
                     <th class="col s2">Status</th>
-                    <th class="col s2">Date of Action</th>
-                    <th class="col s2">Reason of alert</th>
+                    <th class="col s2">start date</th>
+                    <th class="col s2">death line</th>
+                    <th class="col s2">press when done</th>
                 </tr>
             </thead>
         </table>
-            @foreach($companyData as $data)
+            @foreach($projects as $project)
+
         <ul class="collapsible">
             <li>
                 <!-- collapsible header, each with it's own data -->
@@ -49,16 +51,31 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>{{$data->contact->name}}</th>
-                            <th>{{$data['companyname']}}</th>
-                            <th>@if($data['creditworthy' == 1])
-                                    Creditworthy
-                                @else
-                                    Not creditworthy
+                            <th>{{$project->title}}</th>
+                            @foreach($contacts as $contact)
+                                @if($project['contact_id'] == $contact['contact_id'])
+                                <th>{{$contact->contact_name}} {{$contact->last_name}}</th>
+                                @endif
+                            @endforeach
+                            <th>@if($project['project_status'] == 1)
+                                    on hold
+                                @elseif($project['project_status'] == 0)
+                                    project is go
+                                @elseif($project['project_status'] == 2)
+                                    project is done
                                 @endif
                             </th>
-                            <th>{{$data['updated_at']}}</th>
-                            <th>Reason of Alert</th>
+                            <th>{{$project['start_time']}}</th>
+                            <th>{{$project['death_line']}}</th>
+                            <th>
+                            <form action="{{route('development.done')}}" method="post">
+                                <input type="hidden" name="id" value="{{$project->id}}">
+                                @csrf
+                                <input type="submit" value="it is done">
+                            </form>
+                            </th>
+
+
                         </tr>
                         </thead>
                     </table>
@@ -103,16 +120,18 @@
 
     <!-- the menu field with navigation -->
     <aside class="col s3 pull-s9 menu-field">
+
         <h3 class="center-align">BARROC IT</h3>
         <h5 class="center-align">SOFTWARE FOR REAL</h5>
+
         <ul>
-            <li><a href="{{route('dashboard')}}"><b>All clients</b></a></li>
-            <li><a href="{{route('add_client')}}">Add new client</a></li>
-            <li><a href="{{route('add_contact')}}">Add new contact</a></li>
+            <li><a href="{{route('development')}}"><b>All Projects</b></a></li>
             <li><a href="{{route('help')}}">Help</a></li>
             <li><a>Logout</a></li>
         </ul>
+
     </aside>
+
 </section>
 
 <!-- including jquery and materialize frameworks -->

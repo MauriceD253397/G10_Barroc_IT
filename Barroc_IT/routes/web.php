@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('sales/dashboard');
+    return view('welcome');
 });
 
 // Sales routes
@@ -30,3 +30,11 @@ Route::get('sales/editclient', 'SalesController@ShowEditClient')->name('edit_cli
 Route::get('sales/help', 'SalesController@ShowSalesHelp')->name('help');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//route om de database te laten zien
+Route::get('/development', 'DevelopmentController@index')->name('development');
+//route om de database te updaten
+route::post('/development/', 'DevelopmentController@done')->name('development.done');

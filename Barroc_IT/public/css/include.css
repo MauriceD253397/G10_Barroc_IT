@@ -36,3 +36,6 @@ h5 {
 .menu-field a {
     color: grey;
 }
+ table thead tr th{
+     width: calc(100% / 5);
+ }
