@@ -13,8 +13,8 @@ class CreateInvoiceProjectsForeign extends Migration
      */
     public function up()
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->foreign('invoice_id')->references('invoice_id')->on('invoices');
+        Schema::table('invoices', function (Blueprint $table) {
+            $table->foreign('project_id')->references('project_id')->on('projects');
         });
     }
 
