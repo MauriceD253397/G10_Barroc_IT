@@ -68,11 +68,17 @@
                             <th>{{$project['start_time']}}</th>
                             <th>{{$project['death_line']}}</th>
                             <th>
+                                @if($project['project_status'] == 0)
                             <form action="{{route('development.done')}}" method="post">
-                                <input type="hidden" name="id" value="{{$project->id}}">
+                                <input type="hidden" name="id" value="{{$project->project_id}}">
                                 @csrf
                                 <input type="submit" value="it is done">
                             </form>
+                                @elseif($project['project_status'] == 1)
+
+                                @elseif($project['project_status'] == 2)
+
+                                @endif
                             </th>
 
 
@@ -83,29 +89,16 @@
 
                 <!-- collapsible body, each with it's own data corresponding to its collapsible header -->
                 <div class="col s12 collapsible-body">
-                    <section class="col s4 address-content">
-                        <h5>Address</h5>
-                        <p><b>$company</b></p>
-                        <p>Residence: <b>Stijnenberg 15</b></p>
-                        <p>Zip: <b>4811 VD</b></p>
-
-                        <h5>Second address</h5>
-                        <p>Residence: <b>Voor de korte omme 20</b></p>
-                        <p>Zip: <b>4124 AC</b></p>
-
-
-                    </section>
-                    <section class="col s4 contact-content">
-                        <h5>contact</h5>
-                        <p>Phone number: <b>06-78476313</b></p>
-                        <p>Fax number: <b>+44 161 999 8888</b></p>
-                        <p>Last contact date: <b>10-10-1990</b></p>
-                    </section>
-                    <section class="col s4 offer-content">
-                        <h5>Issue</h5>
-                        <p>Offer number: <b>0676313</b></p>
-                        <p>Offer status: <b>Failure to pay moneys</b></p>
-                    </section>
+                    @foreach($contacts as $contact)
+                        @if($project['contact_id'] == $contact['contact_id'])
+                             <section class="col s4 contact-content">
+                                <h5>contact</h5>
+                                <p>Phone number: <b>{{$contact->telephone_number}}</b></p>
+                                <p>Fax number: <b>{{$contact->fax_number}}</b></p>
+                                <p>email: <b>{{$contact->email}}</b></p>
+                            </section>
+                        @endif
+                    @endforeach
                 </div>
             </li>
         </ul>
@@ -126,7 +119,6 @@
 
         <ul>
             <li><a href="{{route('development')}}"><b>All Projects</b></a></li>
-            <li><a href="{{route('help')}}">Help</a></li>
             <li><a>Logout</a></li>
         </ul>
 

@@ -27,15 +27,19 @@ class DevelopmentController extends Controller
 
         //om de database te updaten zodat er staat dat het programma werkt
             DB::table('projects')
-                ->where('id', $_POST )
-                ->update(['project_statusx' => 'done'])
+                ->where('project_id', $_POST )
+                ->update(['project_status' => 2])
             ;
             // alles uit de database halen om de view opnieuw te laten zien
-            $projects = \App\Development::all();
+            $projects = \App\Project::all();
+            $contacts = \App\Contact::all();
+            $companies = \App\Company::all();
 
         //terug te gaan naar de view
-        return view('test_development')
-            ->with('projects', $projects);
+        return view('Development\index')
+            ->with('projects', $projects)
+            ->with('contacts', $contacts)
+            ->with('companies', $companies);
     }
 
 }
