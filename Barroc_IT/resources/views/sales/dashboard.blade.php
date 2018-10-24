@@ -49,9 +49,9 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>{{$data->contact->name}}</th>
-                            <th>{{$data['companyname']}}</th>
-                            <th>@if($data['creditworthy' == 1])
+                            <th>{{$data->project->contacts->contact_id}}</th>
+                            {{--<th>{{//$data->}}</th>--}}
+                            <th>@if($data['creditworthy'] == 1)
                                     Creditworthy
                                 @else
                                     Not creditworthy
