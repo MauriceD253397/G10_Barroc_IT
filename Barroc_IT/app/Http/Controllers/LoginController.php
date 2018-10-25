@@ -14,7 +14,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $users = \App\Users::all();
-
+        $error = null;
         foreach ($users as $user)
         {
             if ($user->username == $request->username)
@@ -35,7 +35,15 @@ class LoginController extends Controller
                             ->with('companies', $companies);    
                     }elseif ($user->department_id == 2)
                     {
-
+                        $projects = \App\Project::all();
+                        $contacts = \App\Contact::all();
+                        $companies = \App\Company::all();
+                        $appointments = \App\Appointment::all();
+                        return view('sales/dashboard')
+                            ->with('projects', $projects)
+                            ->with('contacts', $contacts)
+                            ->with('companies', $companies)
+                            ->with('appointments', $appointments);
                     }elseif ($user->department_id == 3)
                     {
 
@@ -45,16 +53,17 @@ class LoginController extends Controller
                 else
                 {
                     $error = 'the password is wrong';
-                    return view('auth\login')->with('error', $error);
+
                 }
             }
             else
             {
                 $error = 'the username is wrong';
-                return view('auth\login')->with('error', $error);
+
             }
         }
 
-
+        return view('auth\login')->with('error', $error);
     }
+
 }
