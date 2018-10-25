@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <!-- Styles -->
+<!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('/css/vw_login.css') }}">
@@ -12,14 +12,16 @@
     <section class="row">
         <aside class="col s8 push-s4 content-field">
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                {!! csrf_field() !!}
+            <form class="form-horizontal" role="form" method="POST" action="{{route('login.login')}}">
 
+                @if($error != null)
+                    <h5>{{$error}}</h5>
+                @endif
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label class="col-md-4 control-label">E-Mail Address</label>
-
+                    <label class="col-md-4 control-label">Username</label>
+                    @csrf
                     <div class="col-md-6">
-                        <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                        <input class="form-control" name="username" value="{{ old('email') }}">
 
                         @if ($errors->has('email'))
                             <span class="help-block">
