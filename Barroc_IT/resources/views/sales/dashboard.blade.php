@@ -32,15 +32,14 @@
         <table>
             <thead>
                 <tr>
-                    <th class="col s2">Contact</th>
-                    <th class="col s3"><span>Company </th></span>
-                    <th class="col s2">Status</th>
-                    <th class="col s2">Date of Action</th>
-                    <th class="col s2">Reason of alert</th>
+                    <th class="col s3">Contact</th>
+                    <th class="col s3">Company</th>
+                    <th class="col s3">Status</th>
+                    <th class="col s3">Date of Action</th>
                 </tr>
             </thead>
         </table>
-            @foreach($companyData as $data)
+            @foreach($projects as $project)
         <ul class="collapsible">
             <li>
                 <!-- collapsible header, each with it's own data -->
@@ -48,17 +47,35 @@
 
                     <table>
                         <thead>
+                        {{--{{dd($project->contacts->contact_name)}}--}}
                         <tr>
-                            <th>{{$data->project->contacts->contact_id}}</th>
-                            {{--<th>{{//$data->}}</th>--}}
-                            <th>@if($data['creditworthy'] == 1)
-                                    Creditworthy
-                                @else
-                                    Not creditworthy
+                        @foreach($contacts as $contact)
+                            <!-- Laat alleen de contact zien die past bij het project dat we op dit moment laten zien. -->
+                                @if($contact->contact_id == $project->project_id)
+                                    <th>{{$contact->contact_name}}</th>
                                 @endif
-                            </th>
-                            <th>{{$data['updated_at']}}</th>
-                            <th>Reason of Alert</th>
+                            @endforeach
+
+                            @foreach($companies as $company)
+                            <!-- Laat alleen de contact zien die past bij het project dat we op dit moment laten zien. -->
+                                @if($company->company_id == $project->project_id)
+                                    <th>{{$company->company_name}}</th>
+                                @endif
+                            @endforeach
+
+                            @foreach($contacts as $contact)
+                                <!-- Laat alleen de contact zien die past bij het project dat we op dit moment laten zien. -->
+                                    @if($contact->contact_id == $project->project_id)
+                                        {{--kijk of het contact creditworthy is--}}
+                                    <th>@if($contact->creditworthy == 1)
+                                            Creditworthy
+                                        @else
+                                            Not creditworthy
+                                        @endif
+                                    </th>
+                                    @endif
+                            @endforeach
+                            <th>{{$project->updated_at}}</th>
                         </tr>
                         </thead>
                     </table>
@@ -68,36 +85,37 @@
                 <div class="col s12 collapsible-body">
                     <section class="col s4 address-content">
                         <h5>Address</h5>
-                        <p><b>$company</b></p>
-                        <p>Residence: <b>Stijnenberg 15</b></p>
-                        <p>Zip: <b>4811 VD</b></p>
-
-                        <h5>Second address</h5>
-                        <p>Residence: <b>Voor de korte omme 20</b></p>
-                        <p>Zip: <b>4124 AC</b></p>
-
-
+                        @foreach($contacts as $contact)
+                            @if($contact->contact_id == $project->project_id)
+                                <p>Contact name: <b>{{$contact->contact_name}}</b></p>
+                                <p>Residence: <b>{{$contact->residence}}</b></p>
+                                <p>Zip: <b>{{$contact->zipcode}}</b></p>
+                            @endif
+                        @endforeach
                     </section>
                     <section class="col s4 contact-content">
                         <h5>contact</h5>
-                        <p>Phone number: <b>06-78476313</b></p>
-                        <p>Fax number: <b>+44 161 999 8888</b></p>
-                        <p>Last contact date: <b>10-10-1990</b></p>
+                        @foreach($contacts as $contact)
+                            @if($contact->contact_id == $project->project_id)
+                                <p>Phone number: <b>{{$contact->telephone_number}}</b></p>
+                                <p>Fax number: <b>{{$contact->fax_number}}</b></p>
+                            @endif
+                        @endforeach
                     </section>
                     <section class="col s4 offer-content">
-                        <h5>Issue</h5>
-                        <p>Offer number: <b>0676313</b></p>
-                        <p>Offer status: <b>Failure to pay moneys</b></p>
+                        <h5>Next appointment</h5>
+                        @foreach($appointments as $appointment)
+                            @if($appointment->appointment_number == $project->project_id)
+                                <p>Appointment date <b>{{$appointment->next_action}}</b></p>
+                                <p>Apppointment description <b>{{$appointment->appointment_description}}</b></p>
+
+                            @endif
+                        @endforeach
                     </section>
                 </div>
             </li>
         </ul>
         @endforeach
-        <ul class="pagination">
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-        </ul>
-
     </aside>
 
 
