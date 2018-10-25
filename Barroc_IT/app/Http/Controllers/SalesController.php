@@ -13,10 +13,15 @@ class SalesController extends Controller
     {
 
         $allCompanyData = Company::all();
-
-        return view('sales/dashboard',[
-            'companyData' => $allCompanyData
-        ]);
+        $projects = \App\Project::all();
+        $contacts = \App\Contact::all();
+        $companies = \App\Company::all();
+        $appointments = \App\Appointment::all();
+        return view('sales/dashboard')
+            ->with('projects', $projects)
+            ->with('contacts', $contacts)
+            ->with('companies', $companies)
+            ->with('appointments', $appointments);
     }
 
     public function ShowAddClient()
