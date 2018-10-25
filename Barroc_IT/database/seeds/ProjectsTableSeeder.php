@@ -24,7 +24,8 @@ class ProjectsTableSeeder extends Seeder
                 'title' => $faker->domainName,
                 'project_status' => 0,
                 'death_line' => $faker->dateTime,
-                'start_time' => $faker->dateTime
+                'start_time' => $faker->dateTime,
+                'updated_at' => $faker->dateTime
                 ]);
     }
 }
