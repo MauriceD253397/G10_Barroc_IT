@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    public function contact(){
+    public function project(){
         return $this->hasOne('Project');
     }
 }
