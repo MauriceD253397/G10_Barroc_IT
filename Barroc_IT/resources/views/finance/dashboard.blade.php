@@ -50,17 +50,17 @@
                         <table>
                             <thead>
                             <tr>
-                                <th>{{$data->contacts->contactname}}</th>
+                                <th>{{$data->contactname}}</th>
                                 <th>{{$data->companyname}}</th>
                                 <th>{{$data->status}}</th>
-                                <th>{{$data->appointments->date_of_action}}</th>
+                                <th>{{$data->date_of_action}}</th>
                                 <th>@if($data->creditworthy == 1)
                                         Creditworthy
                                     @else
                                         Not creditworthy
                                     @endif
                                 </th>
-                                <th>{{$data->invoices->factuur_saldo}}</th>
+                                <th>{{$data->factuur_saldo}}</th>
                                 <th>{{$data->update_time}}</th>
                                 <th>Reason of Alert</th>
                             </tr>
@@ -71,10 +71,10 @@
                     <!-- collapsible body, each with it's own data corresponding to its collapsible header -->
                     <div class="col s12 collapsible-body">
                         <section class="col s4 address-content">
-                            <h5>Address</h5>
-                            <p><b>$company</b></p>
-                            <p>Residence: <b>Stijnenberg 15</b></p>
-                            <p>Zip: <b>4811 VD</b></p>
+                            <h5>{{$data->adress}}</h5>
+                            <p><b>{{$data->company_name}}</b></p>
+                            <p>Residence: <b>{{$data->residence}}</b></p>
+                            <p>Zip: <b>{{$data->zipcode}}</b></p>
 
                             <h5>Second address</h5>
                             <p>Residence: <b>Voor de korte omme 20</b></p>
@@ -84,8 +84,8 @@
                         </section>
                         <section class="col s4 contact-content">
                             <h5>contact</h5>
-                            <p>Phone number: <b>06-78476313</b></p>
-                            <p>Fax number: <b>+44 161 999 8888</b></p>
+                            <p>Phone number: <b>{{$data->telephone_number}}</b></p>
+                            <p>Fax number: <b>{{$data->fax_number}}</b></p>
                             <p>Last contact date: <b>10-10-1990</b></p>
                         </section>
                         <section class="col s4 offer-content">
