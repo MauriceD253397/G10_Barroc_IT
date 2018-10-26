@@ -21,7 +21,6 @@
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/monolog/monolog" />
-      <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/opis/closure" />
@@ -29,13 +28,11 @@
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpdocumentor/type-resolver" />
-      <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/php-file-iterator" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/php-text-template" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/php-token-stream" />
-      <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/phpunit/phpunit-mock-objects" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/Barroc_IT/vendor/psr/log" />
