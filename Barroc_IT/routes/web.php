@@ -29,6 +29,13 @@ Route::get('sales/editclient', 'SalesController@ShowEditClient')->name('edit_cli
 
 Route::get('sales/help', 'SalesController@ShowSalesHelp')->name('help');
 
+Route::get('/finance/dashboard', 'financeController@ShowFinance')->name('dashboard');
+
+route::post('/finance/dashboard', 'financeController@done')->name('finance.done');
+
+Route::post('/finance/invoice', 'financeController@Invoices')->name('finance.invoice');
+
+
 //route om de database te laten zien
 Route::get('/development', 'DevelopmentController@index')->name('development');
 //route om de database te updaten
