@@ -36,3 +36,4 @@ route::post('/development/', 'DevelopmentController@done')->name('development.do
 
 route::get('/login', 'Logincontroller@index')->name('login');
 route::post('/login', 'Logincontroller@login')->name('login.login');
+// route::delete('/sales/{appointment_number}/delete','SalesController@DeleteAppointment')->name('delete');

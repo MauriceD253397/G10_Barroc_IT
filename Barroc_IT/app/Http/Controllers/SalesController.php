@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Appointment;
 use Illuminate\Http\Request;
 use App\Company;
 class SalesController extends Controller
@@ -55,6 +56,10 @@ class SalesController extends Controller
         return view('sales/help', [
 
         ]);
+    }
+    public function DeleteAppointment($appointment_number){
+
+        // Appointment::find($appointment_number)->delete();
     }
 
 }
