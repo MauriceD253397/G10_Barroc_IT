@@ -41,28 +41,64 @@
             </tr>
             </thead>
         </table>
-        @foreach($companyData as $data)
+    @foreach($projects as $project)
             <ul class="collapsible">
                 <li>
                     <!-- collapsible header, each with it's own data -->
                     <div class="collapsible-header">
-
                         <table>
                             <thead>
                             <tr>
-                                <th>{{$data->contactname}}</th>
-                                <th>{{$data->companyname}}</th>
-                                <th>{{$data->status}}</th>
-                                <th>{{$data->date_of_action}}</th>
-                                <th>@if($data->creditworthy == 1)
-                                        Creditworthy
-                                    @else
-                                        Not creditworthy
+                            @foreach($contacts as $contact)
+                                    @if($contact->contact_id == $project->project_id)
+                                        <th>{{$contact->contact_name}}</th>
+                                    @endif
+                                @endforeach
+
+                                @foreach($companies as $company)
+                                    @if($company->company_id == $project->project_id)
+                                        <th>{{$company->company_name}}</th>
+                                    @endif
+
+                                @endforeach
+                                @foreach($contacts as $contact)
+                                    @if($contact->contact_id == $project->project_id)
+                                <th>{{$contact->creditworthy}}</th>
+                                    @endif
+                                @endforeach
+
+                                    @foreach($appointments as $appointment)
+                                        @if($appointment->project_id == $project->project_id)
+                                <th>{{$appointment->date_of_action}}</th>
+                                        @endif
+                                    @endforeach
+
+                                @foreach($contacts as $contact)
+                                    @if($project->contact_id == $contact->contact_id)
+                                <th>
+                                    @if($contact['creditworthy'] == 0)
+                                        <form action="{{route('finance.done')}}" method="post">
+                                            <input type="hidden" name="id" value="{{$contact->contact_id}}">
+                                            @csrf
+                                            <input type="submit" value="is creditworthy">
+                                        </form>
+                                    @elseif($contact['creditwrothy'] == 1)
                                     @endif
                                 </th>
-                                <th>{{$data->factuur_saldo}}</th>
-                                <th>{{$data->update_time}}</th>
-                                <th>Reason of Alert</th>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($invoices as $invoice)
+                                        @if($invoice->project_id == $project->project_id)
+                                <th>{{$invoice->factuur_saldo}}</th>
+                                    @endif
+                                    @endforeach
+                                    @foreach($contacts as $contact)
+                                        @if($project->contact_id == $contact->contact_id)
+                                <th>{{$contact->update_time}}</th>
+                                    @endif
+                                    @endforeach
+                                {{--<th>Reason of Alert</th>--}}
                             </tr>
                             </thead>
                         </table>
@@ -71,27 +107,42 @@
                     <!-- collapsible body, each with it's own data corresponding to its collapsible header -->
                     <div class="col s12 collapsible-body">
                         <section class="col s4 address-content">
-                            <h5>{{$data->adress}}</h5>
-                            <p><b>{{$data->company_name}}</b></p>
-                            <p>Residence: <b>{{$data->residence}}</b></p>
-                            <p>Zip: <b>{{$data->zipcode}}</b></p>
-
-                            <h5>Second address</h5>
-                            <p>Residence: <b>Voor de korte omme 20</b></p>
-                            <p>Zip: <b>4124 AC</b></p>
-
-
+                            <h5>Address</h5>
+                            @foreach($contacts as $contact)
+                                @if($contact->contact_id == $project->project_id)
+                                    <p>Contact name: <b>{{$contact->contact_name}}</b></p>
+                                    <p>Residence: <b>{{$contact->residence}}</b></p>
+                                    <p>Zip: <b>{{$contact->zipcode}}</b></p>
+                                @endif
+                            @endforeach
                         </section>
                         <section class="col s4 contact-content">
                             <h5>contact</h5>
-                            <p>Phone number: <b>{{$data->telephone_number}}</b></p>
-                            <p>Fax number: <b>{{$data->fax_number}}</b></p>
-                            <p>Last contact date: <b>10-10-1990</b></p>
+                            @foreach($contacts as $contact)
+                                @if($contact->contact_id == $project->project_id)
+                                    <p>Phone number: <b>{{$contact->telephone_number}}</b></p>
+                                    <p>Fax number: <b>{{$contact->fax_number}}</b></p>
+                                @endif
+                            @endforeach
                         </section>
                         <section class="col s4 offer-content">
-                            <h5>Issue</h5>
-                            <p>Offer number: <b>0676313</b></p>
-                            <p>Offer status: <b>Failure to pay moneys</b></p>
+                            <h5>Residence</h5>
+                            @foreach($contacts as $contact)
+                                @if($contact->contact_id == $project->contact_id)
+                                    <p>Residence: <b>{{$contact->residence}}</b></p>
+                                    <p>Adress: <b>{{$contact->adress}}</b></p>
+
+                                @endif
+                            @endforeach
+                            @foreach($invoices as $invoice)
+                                @if($invoice->project_id == $project->project_id)
+                            <form action="{{route('finance.invoice')}}" method="post">
+                                <input type="hidden" name="id" value="{{$invoice->project_id}}">
+                                @csrf
+                                <input type="submit" value="view invoice">
+                            </form>
+                                @endif
+                                @endforeach
                         </section>
                     </div>
                 </li>

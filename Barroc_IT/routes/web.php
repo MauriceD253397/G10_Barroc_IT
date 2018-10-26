@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 Route::get('/sales/dashboard', 'SalesController@ShowSales')->name('dashboard');
 
-
 Route::get('sales/addclient', 'SalesController@ShowAddClient')->name('add_client');
 
 Route::get('sales/addcontact', 'SalesController@ShowAddContact')->name('add_contact');
@@ -29,6 +28,13 @@ Route::get('sales/managecontacts', 'SalesController@ShowManageContacts')->name('
 Route::get('sales/editclient', 'SalesController@ShowEditClient')->name('edit_client');
 
 Route::get('sales/help', 'SalesController@ShowSalesHelp')->name('help');
+
+Route::get('/finance/dashboard', 'financeController@ShowFinance')->name('dashboard');
+
+route::post('/finance/dashboard', 'financeController@done')->name('finance.done');
+
+Route::post('/finance/invoice', 'financeController@Invoices')->name('finance.invoice');
+
 
 //route om de database te laten zien
 Route::get('/development', 'DevelopmentController@index')->name('development');
