@@ -23,11 +23,11 @@ class CreateTableContacts extends Migration
             $table->string('telephone_number');
             $table->string('fax_number');
             $table->string('email');
-            $table->string('bankrekeningnummer');
-            $table->integer('saldo');
-            $table->integer('limiet_rood');
-            $table->string('grootboeknummer');
-            $table->boolean('creditworthy');
+            $table->string('bankrekeningnummer')->nullable();
+            $table->integer('saldo')->nullable();
+            $table->integer('limiet_rood')->nullable();
+            $table->string('grootboeknummer')->nullable();
+            $table->boolean('creditworthy')->nullable();
             $table->timestamps();
         });   //
     }

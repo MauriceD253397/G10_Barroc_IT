@@ -70,9 +70,8 @@
                                     <th>@if($contact->creditworthy == 1)
                                             Creditworthy
                                         @else
-                                            Not creditworthy
+                                            Not creditworthy</th>
                                         @endif
-                                    </th>
                                     @endif
                             @endforeach
                             <th>{{$project->updated_at}}</th>
@@ -80,11 +79,11 @@
                         </thead>
                     </table>
                 </div>
-
                 <!-- collapsible body, each with it's own data corresponding to its collapsible header -->
                 <div class="col s12 collapsible-body">
                     <section class="col s4 address-content">
                         <h5>Address</h5>
+                     {{--Adress information block   --}}
                         @foreach($contacts as $contact)
                             @if($contact->contact_id == $project->project_id)
                                 <p>Contact name: <b>{{$contact->contact_name}}</b></p>
@@ -93,6 +92,7 @@
                             @endif
                         @endforeach
                     </section>
+                    {{--Contact information block--}}
                     <section class="col s4 contact-content">
                         <h5>contact</h5>
                         @foreach($contacts as $contact)
@@ -102,13 +102,19 @@
                             @endif
                         @endforeach
                     </section>
+
+                    {{--Appointment block--}}
                     <section class="col s4 offer-content">
                         <h5>Next appointment</h5>
                         @foreach($appointments as $appointment)
                             @if($appointment->appointment_number == $project->project_id)
                                 <p>Appointment date <b>{{$appointment->next_action}}</b></p>
                                 <p>Apppointment description <b>{{$appointment->appointment_description}}</b></p>
-
+                                    {{--<form action="{{route('delete', $appointment->appointment_number)}}" method="POST">--}}
+                                        {{--@method('delete')--}}
+                                        {{--@csrf--}}
+                                        {{--<input type="submit" value="Delete">--}}
+                                    {{--</form>--}}
                             @endif
                         @endforeach
                     </section>
