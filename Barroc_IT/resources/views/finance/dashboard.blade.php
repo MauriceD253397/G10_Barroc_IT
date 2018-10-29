@@ -82,7 +82,9 @@
                                             @csrf
                                             <input type="submit" value="is creditworthy">
                                         </form>
-                                    @elseif($contact['creditwrothy'] == 1)
+                                    @elseif($contact['creditworthy'] == 1)
+                                        <th>the contact is already creditworthy</th>
+                                    
                                     @endif
                                 </th>
                                     @endif
